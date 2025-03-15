@@ -27,6 +27,26 @@ public class LibraryManagament {
                     bookCount++;
                     System.out.println("Book added successfully\n");
                     break;
+                case 2:
+                    System.out.print("Enter the name of the book you want to search: ");
+                    scanner.nextLine();
+                    String searchBookName = scanner.nextLine();
+                    boolean isFound = false;
+
+                    for (int i = 0; i < bookCount; i++) {
+                        if (books[i].equals(searchBookName)) {
+                            isFound = true;
+                            break;
+                        }
+                    }
+
+                    if (isFound) {
+                        System.out.println("Book found in the library\n");
+                    } else {
+                        System.out.println("Book not found in the library\n");
+                    }
+
+                    break;
                 case 3:
                     System.out.println("List of all books:");
 
@@ -36,6 +56,9 @@ public class LibraryManagament {
 
                     System.out.println();
                     break;
+                case 4:
+                    System.out.println("Thank you for using the Library Management System");
+                    return;
             }
         }
     }
